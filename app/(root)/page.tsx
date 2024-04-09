@@ -1,12 +1,20 @@
-import { Button } from "@/components/ui/button";
+'use client'
 import { UserButton } from "@clerk/nextjs";
-
-export default function Home() {
+import Modal from "@/components/ui/modal";
+import { useStoreModal } from "@/hooks/use-store-modal";
+import { useEffect } from "react";
+export default function Home() { 
+  const onOpen = useStoreModal((state) => state.onOpen)
+  const isOpen = useStoreModal((state) => state.isOpen)
+  useEffect(() =>{ 
+    if(!isOpen){ 
+      onOpen()
+    }
+  },[isOpen,onOpen])
   return (
     <>  
       <main className="p-4">
-        <UserButton showName userProfileMode="modal"/> 
-        okay
+        
       </main>
     </>
   );
