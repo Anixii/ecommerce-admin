@@ -1,11 +1,11 @@
 'use client'
-import { UserButton } from "@clerk/nextjs";
-import Modal from "@/components/ui/modal";
+
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { useEffect } from "react";
 export default function Home() { 
   const onOpen = useStoreModal((state) => state.onOpen)
-  const isOpen = useStoreModal((state) => state.isOpen)
+  const isOpen = useStoreModal((state) => state.isOpen)  
+  console.log(isOpen, 'page');
   useEffect(() =>{ 
     if(!isOpen){ 
       onOpen()

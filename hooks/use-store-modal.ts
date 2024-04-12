@@ -6,7 +6,7 @@ type useStoreModal = {
     onClose: () => void
 }
 
-export const useStoreModal = create <useStoreModal>((set) => ({ 
+export const useStoreModal = create <useStoreModal>((set) => ({  
     isOpen: false, 
     onOpen: () => set({isOpen: true}),
     onClose: () => set({isOpen: false}),

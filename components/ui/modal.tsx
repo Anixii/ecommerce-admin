@@ -12,7 +12,7 @@ type ModalProps = {
   description: string;
   isOpen: boolean;
   onClose: () => void;
-  chidlren?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const Modal: React.FC<ModalProps> = ({
@@ -20,8 +20,9 @@ const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   title,
-  chidlren,
+  children,
 }) => {
+  
   const onHandleChange = (open: boolean) => {
     if (!open) {
       onClose();
@@ -34,8 +35,8 @@ const Modal: React.FC<ModalProps> = ({
           <DialogHeader>
             <DialogTitle>{title}</DialogTitle>
             <DialogDescription>{description}</DialogDescription>
-          </DialogHeader>
-          <section>{chidlren}</section>
+          </DialogHeader> 
+          <section>{children}</section>
         </DialogContent>
       </Dialog>
     </>

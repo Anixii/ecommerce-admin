@@ -7,11 +7,13 @@ import { useEffect, useState } from "react";
 const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
 
+  console.log();
+  
   useEffect(() => {
     setIsMounted(true);
   }, []);
-  if (isMounted) {
-    return null;
+  if (!isMounted) {
+    return null
   }
   return <StoreModal />;
 };
